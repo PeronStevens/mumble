@@ -23,9 +23,13 @@ $(function(){
             $(".username-error").text("Please enter a name");
         }
     });
-        
-    $(".chat-button").click(function(e){
+
+    $("#message-form").click(function(e){
         e.preventDefault();
+
+        var message = $("#message").val();
+        $("#message").val("");
+
     })
 
     function cookieCheck(){
