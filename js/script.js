@@ -30,6 +30,15 @@ $(function(){
         var message = $("#message").val();
         $("#message").val("");
 
+        $.ajax({
+            type: "POST",
+            url: "php/chat.php",
+            data: { message : message },
+            success: function(response){
+                console.log(response);
+            }
+        })
+
     })
 
     function cookieCheck(){
