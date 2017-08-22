@@ -22,7 +22,8 @@ $(function(){
         } else {
             $(".username-error").text("Please enter a name");
         }
-    });    
+    });
+        
     $(".chat-button").click(function(e){
         e.preventDefault();
     })
@@ -52,7 +53,6 @@ $(function(){
             }
         })
     })
-
 
     if (window.location.href.includes('chat')){
         
