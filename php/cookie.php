@@ -1,5 +1,5 @@
 <?php
 
-    echo isset($_COOKIE['username']) ;
+    echo empty($_COOKIE['username']);
 
 ?>

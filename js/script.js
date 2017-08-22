@@ -32,9 +32,8 @@ $(function(){
             url: "php/cookie.php",
             success: function(response){
                 console.log(response);
-                if (response !== 1 && window.location.href.includes('chat.html')){
+                if (response == 1 && window.location.href.includes('chat.html')){
                     window.location.href = 'index.html';
-                    
                 }
 
             }
