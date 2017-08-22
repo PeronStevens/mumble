@@ -8,6 +8,7 @@
         $f = fopen("log.txt", "a");
     }
     fwrite($f, $message);
+    $data = fread($f, filesize("log.txt"));
     fclose($f);
-    echo 1;
+    echo $data;
     ?>
