@@ -31,15 +31,28 @@ $(function(){
         $.ajax({
             url: "php/cookie.php",
             success: function(response){
-                console.log(response);
+
                 if (response == 1 && window.location.href.includes('chat.html')){
                     window.location.href = 'index.html';
                 }
-
+                
             }
         })
     }
     cookieCheck();
+
+    $(".logout").click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: "php/logout.php",
+            type: "POST",
+            success: function(response){
+                window.location = "index.html";
+            }
+        })
+    })
+
 
     if (window.location.href.includes('chat')){
         
