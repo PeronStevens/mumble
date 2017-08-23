@@ -24,7 +24,7 @@ $(function(){
         }
     });
 
-    $("#message-form").click(function(e){
+    $("#message-form").submit(function(e){
         e.preventDefault();
 
         var message = $("#message").val();

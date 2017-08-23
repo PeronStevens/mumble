@@ -1,25 +1,13 @@
 <?php
-   $host        = "127.0.0.1";
-   $port        = "5432";
-   $db      = "test";
-   $username = 'postgres';
-   $password = 'password';
 
-   $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
-   
-  try{
-      // create a PostgreSQL database connection
-      $conn = new PDO($dsn);
-   
-      // display a message if connected to the PostgreSQL successfully
-      if($conn){
-          echo "Connected to the <strong>$db</strong> database successfully!";
-      }
-  }catch (PDOException $e){
-      // report error message
-      echo $e->getMessage();
-  }
+// include("db.php");
+require('db.php');
+$comment = $_POST['message'];
 
-  $stmt = $conn->prepare("CREATE TABLE comments;");
-  $stmt->execute();
+$stmt = $conn->prepare("INSERT INTO comments (id, comment) VALUES (?, ?)");
+$stmt->execute([3 ,$comment]);
+
+$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+print_r($res);
 ?>
