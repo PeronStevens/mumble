@@ -1,14 +1,25 @@
 <?php
+   $host        = "127.0.0.1";
+   $port        = "5432";
+   $db      = "test";
+   $username = 'postgres';
+   $password = 'password';
 
-    $message = $_POST['message'];
-    $f = fopen("log.txt", "a");    
-    if (!file_exists("log.txt")){
-        $f = fopen("log.txt", "w");
-    } else {
-        $f = fopen("log.txt", "a");
-    }
-    fwrite($f, $message);
-    $data = fread($f, filesize("log.txt"));
-    fclose($f);
-    echo $data;
-    ?>
+   $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
+   
+  try{
+      // create a PostgreSQL database connection
+      $conn = new PDO($dsn);
+   
+      // display a message if connected to the PostgreSQL successfully
+      if($conn){
+          echo "Connected to the <strong>$db</strong> database successfully!";
+      }
+  }catch (PDOException $e){
+      // report error message
+      echo $e->getMessage();
+  }
+
+  $stmt = $conn->prepare("CREATE TABLE comments;");
+  $stmt->execute();
+?>
