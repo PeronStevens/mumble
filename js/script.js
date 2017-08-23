@@ -24,8 +24,14 @@ $(function(){
         }
     });
 
+
     $("#message-form").submit(function(e){
         e.preventDefault();
+
+        if ($("#message").val() == "") {
+            $(".message-error").text("Enter something first");
+            return;
+        }
 
         var message = $("#message").val();
         $("#message").val("");
@@ -40,6 +46,24 @@ $(function(){
         })
 
     })
+
+    function getChat(){
+
+        $.ajax({
+            type: "POST",
+            url: "php/get_chat.php",
+            success: function(response){
+                // console.log(response);
+                var res = JSON.parse(response);
+
+                for (var i = 0; i < res.length; i++){
+                    console.log(res[i]['comment']);
+                    $("#chat-window").append(res[i]['comment'] + '<br>');
+                }
+            }
+        })
+    }
+    getChat()
 
     function cookieCheck(){
         $.ajax({
