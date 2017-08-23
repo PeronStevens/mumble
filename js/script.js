@@ -95,6 +95,13 @@ $(function(){
         })
     })
 
+    $.ajax({
+        url: 'php/database.php',
+        success: function(response){
+            console.log(response);
+        }
+    })
+
     if (window.location.href.includes('chat')){
         
         $.ajax({
