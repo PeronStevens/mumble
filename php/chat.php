@@ -4,8 +4,8 @@
 require('db.php');
 $comment = $_POST['message'];
 
-$stmt = $conn->prepare("INSERT INTO comments (id, comment) VALUES (?, ?)");
-$stmt->execute([3 ,$comment]);
+$stmt = $conn->prepare("INSERT INTO comments (comment) VALUES (?)");
+$stmt->execute([$comment]);
 
 // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

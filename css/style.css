@@ -18,12 +18,13 @@ input{
     font-weight: bold;
 }
 #chat-wrap{
-
+    /* min-height: 200px; */
 }
 #chat-window{
     text-align: left;
     overflow: scroll; 
     overflow-x:hidden;
     padding-bottom: 20px;
-    max-height: 100px;
+    max-height: 200px;
+    min-height:  200px;
 }

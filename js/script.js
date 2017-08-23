@@ -48,6 +48,9 @@ $(function(){
     })
 
     function getChat(){
+        $("#chat-window").empty();  
+
+        console.log(3);
 
         $.ajax({
             type: "POST",
@@ -55,7 +58,7 @@ $(function(){
             success: function(response){
                 // console.log(response);
                 var res = JSON.parse(response);
-
+                
                 for (var i = 0; i < res.length; i++){
                     console.log(res[i]['comment']);
                     $("#chat-window").append(res[i]['comment'] + '<br>');
@@ -63,7 +66,8 @@ $(function(){
             }
         })
     }
-    getChat()
+    
+    setInterval(getChat, 3000);
 
     function cookieCheck(){
         $.ajax({
@@ -97,6 +101,7 @@ $(function(){
             type: "POST",
             url: "php/get_username.php",
             success: function(response){
+                var name = response;
                 $(".name").text(response);
             }
         })

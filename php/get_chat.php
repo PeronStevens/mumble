@@ -2,7 +2,7 @@
 
     require('db.php');
 
-    $stmt = $conn->prepare("SELECT comment FROM comments");
+    $stmt = $conn->prepare("SELECT comment FROM comments ORDER BY id DESC");
     $stmt->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
