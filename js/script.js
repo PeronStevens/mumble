@@ -56,13 +56,13 @@ $(function(){
             success: function(response){
                 // console.log(response);
                 var res = JSON.parse(response);
-                console.log(res);
-                console.log(res.length);
+                // console.log(res);
+                // console.log(res.length);
                 
-                // for (var i = 0; i < res.length; i++){
-                //     console.log(res[i]['comment']);
-                //     $("#chat-window").append(res[i]['comment'] + '<br>');
-                // }
+                for (var i = 0; i < res.length; i++){
+                    console.log(res[i]['comment']);
+                    $("#chat-window").append(res[i]['comment'] + '<br>');
+                }
             }
         })
     }
