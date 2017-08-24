@@ -12,9 +12,9 @@ try{
    $conn = new PDO($dsn);
 
    // display a message if connected to the PostgreSQL successfully
-//    if($conn){
-//        echo "Connected to the <strong>$db</strong> database successfully!";
-//    }
+   if($conn){
+       echo "Connected to the <strong>$db</strong> database successfully!";
+   }
 }catch (PDOException $e){
    // report error message
    echo $e->getMessage();
