@@ -61,7 +61,7 @@ $(function(){
                 
                 for (var i = 0; i < res.length; i++){
                     console.log(res[i]['comment']);
-                    $("#chat-window").append(res[i]['comment'] + '<br>');
+                    $("#chat-window").append( '<span class="chat-text" >' + res[i]['comment'] + '<span><br>');
                 }
             }
         })

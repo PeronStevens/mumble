@@ -14,6 +14,10 @@ input{
 .top{
     height: 300px;
 }
+.chat-text{
+    margin-left: 5px;
+    color: #fff;
+}
 .top-text{
     color: #fff;
     background: #000;
@@ -35,7 +39,7 @@ input{
     margin-top: 20px;
 }
 #chat-window{
-    background: #fafafa;
+    background: #000;
     font-size: 19px; 
     text-align: left;
     overflow: scroll; 
