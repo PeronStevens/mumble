@@ -67,7 +67,15 @@ $(function(){
         })
     }
     
-    setInterval(getChat, 3000);
+    // setInterval(getChat, 3000);
+
+    $.ajax({
+        type: "POST",
+        url: "php/db.php",
+        success: function(response){
+            console.log(response);
+        }
+    })
 
     function cookieCheck(){
         $.ajax({

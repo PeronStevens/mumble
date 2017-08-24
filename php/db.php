@@ -27,7 +27,7 @@ $stmt = $conn->prepare("CREATE TABLE IF NOT EXISTS comments (
         comment text
     );");
 
-$stmt->execute();
+print_r($stmt->execute());
 
 
 ?>
