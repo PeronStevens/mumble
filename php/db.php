@@ -22,9 +22,12 @@ try{
    echo $e->getMessage();
 }
 
-$conn->prepare("CREATE TABLE IF NOT EXISTS comments (
-    id serial,
-    comment text
-);");
+$stmt = $conn->prepare("CREATE TABLE IF NOT EXISTS comments (
+        id serial,
+        comment text
+    );");
+
+$stmt->execute();
+
 
 ?>
