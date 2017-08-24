@@ -50,14 +50,13 @@ $(function(){
     function getChat(){
         $("#chat-window").empty();  
 
-        console.log(3);
-
         $.ajax({
             type: "POST",
             url: "php/get_chat.php",
             success: function(response){
                 console.log(response);
-                // var res = JSON.parse(response);
+                var res = JSON.parse(response);
+                console.log(res);
                 
                 // for (var i = 0; i < res.length; i++){
                 //     console.log(res[i]['comment']);
