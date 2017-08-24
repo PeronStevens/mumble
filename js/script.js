@@ -56,7 +56,7 @@ $(function(){
             type: "POST",
             url: "php/get_chat.php",
             success: function(response){
-                console.log(response);
+                console.log(response.length);
                 // var res = JSON.parse(response);
                 
                 // for (var i = 0; i < res.length; i++){
