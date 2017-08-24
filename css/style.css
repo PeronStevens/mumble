@@ -33,6 +33,7 @@ input{
     margin-top: 20px;
 }
 #chat-window{
+    font-size: 19px; 
     text-align: left;
     overflow: scroll; 
     overflow-x:hidden;
