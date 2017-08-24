@@ -1,3 +1,7 @@
+
+body{
+    height: 100vh;
+}
 body, input{
     background: #fafafa;
 }
@@ -7,6 +11,9 @@ input{
     background: #fff;
     font-size: 24px;
     /* border: none; */
+}
+.top{
+    height: 150px;
 }
 .login-button, .chat-button{
     font-size: 20px;
