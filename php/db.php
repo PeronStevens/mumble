@@ -27,7 +27,11 @@ $stmt = $conn->prepare("CREATE TABLE IF NOT EXISTS comments (
         comment text
     );");
 
-print_r($stmt->execute());
+$stmt->execute();
+
+$stmt = $conn->prepare("SELECT * FROM comments");
+
+print_r($stmt->execute() );
 
 
 ?>
