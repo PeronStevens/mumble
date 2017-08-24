@@ -22,16 +22,19 @@ try{
    echo $e->getMessage();
 }
 
-$stmt = $conn->prepare("CREATE TABLE comments (
-        id serial,
-        comment text
-    );");
+// $stmt = $conn->prepare("CREATE TABLE comments (
+//         id serial,
+//         comment text
+//     );");
+
+// $stmt->execute();
+
+
+// $stmt = $conn->prepare("INSERT INTO comments (comment) VALUES ('gmrtgtg') ");
 
 $stmt->execute();
 
-$stmt = $conn->prepare("SELECT * FROM comments");
+$stmt = $conn->prepare("SELECT * FROM test_table");
 
-print_r($stmt->execute() );
-
-
+print_r($stmt->execute());
 ?>
