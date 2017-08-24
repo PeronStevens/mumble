@@ -6,6 +6,6 @@
     $stmt->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // print_r(json_encode($res));  
-    print_r($res);
+    print_r(json_encode($res));  
+    // print_r($res);
 ?>
