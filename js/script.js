@@ -15,7 +15,7 @@ $(function(){
                 url:  "php/login.php",
                 data: {username : $("#username").val()},
                 success: function(respomse){
-                    console.log(respomse);
+                    // console.log(respomse);
                     window.location.href = 'chat.html';
                 }
             })                        
@@ -60,7 +60,7 @@ $(function(){
                 // console.log(res.length);
                 
                 for (var i = 0; i < res.length; i++){
-                    console.log(res[i]['comment']);
+                    // console.log(res[i]['comment']);
                     $("#chat-window").append( '<span class="chat-text" >' + res[i]['comment'] + '<span><br>');
                 }
             }
@@ -73,7 +73,7 @@ $(function(){
         type: "POST",
         url: "php/db.php",
         success: function(response){
-            console.log(response);
+            // console.log(response);
         }
     })
 
@@ -106,7 +106,7 @@ $(function(){
     $.ajax({
         url: 'php/database.php',
         success: function(response){
-            console.log(response);
+            // console.log(response);
         }
     })
 
