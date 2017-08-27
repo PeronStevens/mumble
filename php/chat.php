@@ -4,10 +4,15 @@
 require('db.php');
 $comment = $_POST['message'];
 
-$stmt = $conn->prepare("INSERT INTO comments (comment) VALUES (?)");
-$stmt->execute([$comment]);
+$username = $_COOKIE['username'];
+
+$stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+$stmt->execute([$username]);
+$user_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$stmt = $conn->prepare("INSERT INTO comments (user_id, comment) VALUES (?,?)");
+$stmt->execute([$user_id[0]['id'] ,$comment]);
 
 // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// print_r($res);
 ?>

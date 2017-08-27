@@ -29,11 +29,16 @@ try{
 
 $stmt = $conn->prepare("CREATE TABLE IF NOT EXISTS comments (
     id serial,
+    user_id int,
     comment text
 );");
 
 $stmt->execute();
 
+$stmt = $conn->prepare("CREATE TABLE IF NOT EXISTS users (
+    id serial,
+    username text
+);");
 
-
+$stmt->execute();
 ?>
