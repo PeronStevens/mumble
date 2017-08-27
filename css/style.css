@@ -33,6 +33,12 @@ input{
 .logout-wrap > a{
     color: #fff;
 }
+.user-name{
+    color: red;
+    font-family: monospace;
+    /* font-style: italic; */
+    padding-left: 10px;
+}
 .top-text{
     color: #fff;
     background: #000;

@@ -60,7 +60,7 @@ $(function(){
                 
                 for (var i = 0; i < res.length; i++){
                     // console.log(res[i]['comment']);
-                    $("#chat-window").append( '<span class="chat-text" >' + res[i]['username'] + ': ' + res[i]['comment'] + '<span><br>');
+                    $("#chat-window").append( '<span class="user-name" >'+ res[i]['username'] + ': </span>' + '<span class="chat-text" >'+ res[i]['comment'] + '<span><br>');
                 }
             }
         })
