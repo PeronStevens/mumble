@@ -2,7 +2,7 @@
 
 // include("db.php");
 require('db.php');
-$comment = $_POST['message'];
+$comment = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
 $username = $_COOKIE['username'];
 

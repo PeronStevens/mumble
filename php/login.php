@@ -1,9 +1,10 @@
 <?php
     include('db.php');
 
-    $c_value = $_POST['username'];
-
+    $c_value = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $c_name = 'username';
+    
+    
     
     setcookie($c_name, $c_value, time() + (86400 * 30));
 
