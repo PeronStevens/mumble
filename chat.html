@@ -14,25 +14,25 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div class="container-fluid animated slideInDown">
+        <div class="container-fluid animated slideInRight">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
                     <nav class="logout-wrap">
                         <a href="" class="logout">logout</a>
                     </nav>
+                    <h3 class="hello-text" >Hello <span class="name"></span> </h3>
                     <div class="chat-wrap text-center">
-                        <h3 class="hello-text" >Hello <span class="name"></span> </h3>
                         <div id="chat-window">
                         </div>
-                        <form id="message-form">
-                            <div class="form-group">
-                                <label for="message"></label>
-                                <input id="message" type="text" name="message" value="">
-                                <div class="message-error" ></div>
-                                <button type="submit" class="chat-button btn btn-outline-success">Submit</button>
-                            </div>
-                        </form>
                     </div>
+                    <form id="message-form">
+                        <div class="form-group">
+                            <label for="message"></label>
+                            <input id="message" type="text" name="message" value="">
+                            <div class="message-error" ></div>
+                            <button type="submit" class="chat-button btn">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

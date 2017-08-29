@@ -15,8 +15,10 @@ input{
 }
 .enter-username{
     color: #fff;
+    background: #000;
 }
 .hello-text{
+    text-align: center;
     color: #fff;
 }
 .top{
@@ -54,12 +56,17 @@ input{
     color: red;
     font-weight: bold;
 }
-#chat-wrap{
-    /* min-height: 200px; */
+.chat-wrap{
+    background-color: #000;
+    border-radius: 20px;
 }
 #message{
     padding: 10px;
     margin-top: 20px;
+}
+#message-form{
+    margin: auto;
+    width: 300px;
 }
 #chat-window{
     background: #000;
@@ -70,7 +77,7 @@ input{
     padding-bottom: 20px;
     max-height: 400px;
     min-height:  400px;
-    margin: auto;;
+    margin: auto;
 }
 @media screen and (min-width: 768px) {
     #chat-window{
