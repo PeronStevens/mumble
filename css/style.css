@@ -54,7 +54,7 @@ input{
 }
 
 #message, #username{
-    width: 100px;
+    width: 200px;
     float: left;
 }
 #message-form, #logon{
