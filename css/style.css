@@ -1,21 +1,17 @@
 body{
     height: 100vh;
 }
-body, input{
+body{
     background: #4a4a4a;
 }
 input{
-    color: #fff;
     border: 1px solid #4a4a4a;
     border-radius: 4px;
-    background: #4a4a4a;
     font-size: 24px;
-    border-bottom: 2px solid red;
     /* border: none; */
 }
 .enter-username{
     color: #fff;
-    background: #000;
 }
 .hello-text{
     text-align: center;
@@ -30,10 +26,10 @@ input{
 }
 .logout-wrap{
     width: 46px;
-    background: #000;
 }
 .logout-wrap > a{
     color: #fff;
+    text-decoration: none;
 }
 .user-name{
     color: red;
@@ -43,32 +39,30 @@ input{
 }
 .top-text{
     color: #fff;
-    background: #000;
-    width: 200px;
     margin: auto;
 }
 .login-button, .chat-button{
+    margin: 2px;
     font-size: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px;
+    margin-left: 10px; */
 }
 .username-error,
 .message-error{
     color: red;
     font-weight: bold;
 }
-.chat-wrap{
-    background-color: #000;
-    border-radius: 20px;
+
+#message, #username{
+    width: 200px;
+    float: left;
 }
-#message{
-    padding: 10px;
-    margin-top: 20px;
-}
-#message-form{
+#message-form, #logon{
     margin: auto;
     width: 300px;
 }
 #chat-window{
+    width: 300px;
     background: #000;
     font-size: 19px; 
     text-align: left;
