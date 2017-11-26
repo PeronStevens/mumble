@@ -54,7 +54,7 @@ input{
 }
 
 #message, #username{
-    width: 200px;
+    width: 100px;
     float: left;
 }
 #message-form, #logon{
@@ -62,6 +62,7 @@ input{
     width: 300px;
 }
 #chat-window{
+    border-radius: 6px;
     width: 300px;
     background: #000;
     font-size: 19px; 
