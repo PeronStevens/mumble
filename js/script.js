@@ -42,22 +42,28 @@ $(function(){
             data: { message : message },
             success: function(response){
                 console.log(response);
-                update();
             }
         })
     })
 
+
     function update() {
+
         $.ajax({
             type: "POST",
             url: "php/update.php",
             success: function(response) {
                 console.log(response); 
-                response = JSON.parse(response);
-                $("#chat-window").append( '<span class="user-name" >'+ response[0]['username'] + ': </span>' + '<span class="chat-text" >'+ response[0]['comment'] + '<span><br>');
+                res = JSON.parse(response);
+
+                console.log($(".chat-text:first")[0].id );
+
+                if (parseInt($(".chat-text:first")[0].id) < res[0]['id'] )                
+                    $("#chat-window").prepend('<span class="user-name" >'+ res[0]['username'] + ': </span>' + '<span class="chat-text" id="' + res[0]['id'] + '"  >'+ res[0]['comment'] + '<span><br>');
             }
         })
     }
+    setInterval(update, 3000); 
 
     function getChat(){
         $("#chat-window").empty();  
@@ -65,7 +71,7 @@ $(function(){
         $.ajax({
             type: "POST",
             url: "php/get_chat.php",
-            success: function(response){
+            success: function(response) {
                 // console.log(response);
                 var res = JSON.parse(response);
                 // console.log(res);
@@ -73,14 +79,14 @@ $(function(){
                 
                 for (var i = 0; i < res.length; i++){
                     // console.log(res[i]['comment']);
-                    $("#chat-window").append( '<span class="user-name" >'+ res[i]['username'] + ': </span>' + '<span class="chat-text" >'+ res[i]['comment'] + '<span><br>');
+                    $("#chat-window").append('<span class="user-name" >'+ res[i]['username'] + ': </span>' + '<span class="chat-text" id="' + res[i]['id'] + '" >'+ res[i]['comment'] + '<span><br>');
                 }
             }
         })
     }
     
-    // setInterval(getChat, 3000);
     getChat();
+
     $.ajax({
         type: "POST",
         url: "php/db.php",
@@ -88,7 +94,7 @@ $(function(){
             // console.log(response);
         }
     })
-
+    
     function cookieCheck(){
         $.ajax({
             url: "php/cookie.php",
@@ -119,6 +125,9 @@ $(function(){
             // console.log(response);
         }
     })
+
+    console.log($(".chat-text:first") );
+    
 
     if (window.location.href.includes('chat')){
         
