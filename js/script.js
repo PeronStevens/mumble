@@ -42,9 +42,22 @@ $(function(){
             data: { message : message },
             success: function(response){
                 console.log(response);
+                update();
             }
         })
     })
+
+    function update() {
+        $.ajax({
+            type: "POST",
+            url: "php/update.php",
+            success: function(response) {
+                console.log(response); 
+                response = JSON.parse(response);
+                $("#chat-window").append( '<span class="user-name" >'+ response[0]['username'] + ': </span>' + '<span class="chat-text" >'+ response[0]['comment'] + '<span><br>');
+            }
+        })
+    }
 
     function getChat(){
         $("#chat-window").empty();  
@@ -66,8 +79,8 @@ $(function(){
         })
     }
     
-    setInterval(getChat, 3000);
-
+    // setInterval(getChat, 3000);
+    getChat();
     $.ajax({
         type: "POST",
         url: "php/db.php",
@@ -80,11 +93,9 @@ $(function(){
         $.ajax({
             url: "php/cookie.php",
             success: function(response){
-
                 if (response == 1 && window.location.href.includes('chat.html')){
                     window.location.href = 'index.html';
-                }
-                
+                }   
             }
         })
     }

@@ -15,4 +15,6 @@ $stmt = $conn->prepare("INSERT INTO comments (user_id, comment) VALUES (?,?)");
 $stmt->execute([$user_id[0]['id'] ,$comment]);
 
 // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
