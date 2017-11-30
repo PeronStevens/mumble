@@ -29,9 +29,13 @@ input{
 }
 .logout-wrap{
     width: 46px;
+    padding: 8px;  
+    background: #5f5fa1;
 }
 .logout-wrap > a{
     text-decoration: none;
+    width: 130px;
+    color: #fff;      
 }
 .user-name{
     color: red;
@@ -40,8 +44,11 @@ input{
     padding-left: 10px;
 }
 .top-text{
-    /* color: #fff; */
+    background: #5f5fa1;
+    color: #fff;
     margin: auto;
+    padding: 8px;
+    width: 130px;
 }
 .login-button, .chat-button{
     margin: 5px;
@@ -56,9 +63,13 @@ input{
 }
 
 #message, #username{
+    background: #d4d4d4;
     width: 50%;
     max-width: 300px;
     float: left;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid;
 }
 #message-form, #logon{
     margin: auto;
