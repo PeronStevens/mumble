@@ -1,5 +1,5 @@
 body{
-    width: 300px;
+    min-width: 300px;
     height: 100vh;
     margin: auto;
 }
@@ -31,7 +31,6 @@ input{
     width: 46px;
 }
 .logout-wrap > a{
-    color: #fff;
     text-decoration: none;
 }
 .user-name{
