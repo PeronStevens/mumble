@@ -75,7 +75,6 @@ $(function(){
                 // console.log(response);
                 var res = JSON.parse(response);
                 // console.log(res);
-                // console.log(res.length);
                 
                 for (var i = 0; i < res.length; i++){
                     // console.log(res[i]['comment']);
@@ -87,13 +86,13 @@ $(function(){
     
     getChat();
 
-    $.ajax({
-        type: "POST",
-        url: "php/db.php",
-        success: function(response){
-            // console.log(response);
-        }
-    })
+    // $.ajax({
+    //     type: "POST",
+    //     url: "php/db.php",
+    //     success: function(response){
+    //         console.log(response);
+    //     }
+    // })
     
     function cookieCheck(){
         $.ajax({
@@ -117,13 +116,6 @@ $(function(){
                 window.location = "index.html";
             }
         })
-    })
-
-    $.ajax({
-        url: 'php/database.php',
-        success: function(response){
-            // console.log(response);
-        }
     })
 
     console.log($(".chat-text:first") );
